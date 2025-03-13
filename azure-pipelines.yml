@@ -27,10 +27,11 @@ steps:
 - task: SonarCloudPublish@3
   inputs:
     pollingTimeoutSec: '300'
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
+    options: 'clean install'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
